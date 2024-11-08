@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="../style/style.css" />
+    <style>
+      .navbar {
+        background-color: #0073b7;
+        border-bottom: 1px solid ;
+      }
+      .navbar-brand {
+        font-weight: 500;
+      }
+      .nav-link .bi-cart {
+        font-size: 24px;
+        margin-right: 15px;
+      }
+
+      .nav-link .bi-heart {
+        font-size: 24px;
+        margin-right: 15px;
+      }
+      .cart-link {
+        position: relative; /* Makes it the parent for the absolute-positioned badge */
+      }
+
+      #cart-count {
+        position: absolute; /* Allows the badge to be positioned relative to the cart icon */
+        top: -10px; /* Adjusts the vertical position of the badge */
+        right: -10px; /* Adjusts the horizontal position */
+        transform: translate(
+          50%,
+          -50%
+        ); /* Centers the badge in the top-right corner */
+        font-size: 12px; /* Adjusts the size of the badge */
+        padding: 4px 6px; /* Adjusts padding inside the badge */
+        border-radius: 50%; /* Ensures the badge is circular */
+        z-index: 10; /* Ensures it stays above the icon */
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">I-Click</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <div class="d-flex align-items-center ms-auto">
+
+            <a href="wishlist.html" class="nav-link me-3 wishlist-link">
+              <i class="bi bi-heart"></i>
+            </a>
+            <a href="cart-page.html" class="nav-link me-3 cart-link">
+              <i class="bi bi-cart"></i>
+              <span id="cart-count" class="badge bg-danger" style="position: absolute; top: -1px; right: 10px;">0</span>
+            </a>
+            <div id="loginStateContainer">
+              <!-- Login state content -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container my-5">
+      <!-- <video autoplay muted loop play-inline class="back-video">
+        <source src="../Images/BgVideo.mp4" type="video/mp4">
+      </video> -->
+      <div class="row hero-section p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center">
+        <div class="col-lg-6 p-3 p-lg-5 pt-lg-3">
+          <h1 class="display-4 fw-bold lh-1">
+            Selamat Datang di I-Click Official Store
+          </h1>
+          <h2 class="display-8 fw-bold lh-4">
+            Partner of <span id="typed-text"></span>
+          </h2>
+
+          <p class="lead">
+            Temukan berbagai produk berkualitas dengan harga terbaik. Belanja
+            mudah, aman, dan terpercaya.
+          </p>
+          <div
+            class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
+          >
+            <button
+              type="button"
+              class="btn btn-primary btn-lg px-4 me-md-2 fw-bold"
+            >
+              <a href="#products">Belanja Sekarang</a>
+            </button>
+          </div>
+        </div>
+        <div data-aos="zoom-in" class="col-lg-5 p-0 hero-image-container">
+          <div
+            id="heroCarousel"
+            class="carousel slide hero-carousel"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide-to="0"
+                class="active"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide-to="1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide-to="2"
+              ></button>
+            </div>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../Images/3Didaw.jpg" alt="Gambar 1" />
+              </div>
+              <div class="carousel-item">
+                <img src="../Images/aborigin.jpg" alt="Gambar 2" />
+              </div>
+              <div class="carousel-item">
+                <img src="../Images/Binary.png" alt="Gambar 3" />
+              </div>
+            </div>
+
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide="prev"
+            >
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide="next"
+            >
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Daftar Isi Produk -->
+    <div class="bgproduk">
+    <section id="products" class="container my-5">
+      <h2 class="text-center">Daftar Produk</h2>
+      <div class="container mt-4 mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0">Product 3Didaw</h5>
+          <a href="#" class="text-primary text-decoration-none"
+            >Lihat Semua Barang</a
+          >
+        </div>
+
+        <div class="products-scroll-container">
+          <button class="scroll-button scroll-left hidden" id="scrollLeft1">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="scroll-button scroll-right" id="scrollRight1">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="products-container g-4" id="container1">
+            <div class="card product-card">
+              <img
+                src="../Images/3daw.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Models Perfume Asset - With Custom Background
+                </h5>
+                <p class="product-price mb-0">Rp100.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <p id="hidden-description" class="d-none">
+                    Tambahkan sentuhan elegan pada produk Anda dengan model 3D eksklusif parfum ini. Cocok untuk meningkatkan presentasi produk parfum Anda atau digunakan dalam berbagai proyek kreatif Anda!
+                    Tambahkan sentuhan khusus dengan latar belakang pilihan anda!
+                  </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/3daw2.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Models Cookies Asset - Untuk Produk Anda
+                </h5>
+                <p class="product-price mb-0">Rp75.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                    Hadirkan kesan lezat pada desain Anda! Model 3D kue ini dibuat dengan detail tinggi, sempurna untuk bisnis makanan atau keperluan pemasaran digital Anda.
+                  </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/3daw3.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Models Perfume Asset - Untuk Produk Anda
+                </h5>
+                <p class="product-price mb-0">Rp90.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Kesan mewah dan elegan yang dibawa oleh model parfum 3D ini dapat mempercantik portofolio atau website produk Anda. Desain realistis ini siap meningkatkan daya tarik visual produk Anda!
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/3didaw4.jpg"
+                class="card-img-top product-image"
+                style="background-color: rgb(135, 185, 58)"
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Legos Asset - Ciptakan imajinasimu
+                </h5>
+                <p class="product-price mb-0">Rp200.000 - Rp500.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Bangun imajinasi Anda dengan set 3D Lego yang siap digunakan. Ideal untuk presentasi produk mainan atau proyek kreatif yang membutuhkan visual menarik dan interaktif!
+                  Hadir dengan  detail tinggi dan warna yang cerah, model 3D Lego ini dapat membantu Anda  menciptakan konten yang menarik dan membuat konten animasi yang anda inginkan.
+                  Harga  dapat berubah-ubah tergantung pada ukuran , atribut dan detailnya.Harga untuk animasi bervariatif, silakan hubungi kami untuk mendapatkan informasi lebih lanjut.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/Panggung.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  Stage Design for Event (Custom Colaboration)
+                </h5>
+                <p class="product-price mb-0">Rp150.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Desain Panggung yang diperuntukkan untuk sebuah event atau acara
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/MainGitar.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Model Character for Animation
+                </h5>
+                <p class="product-price mb-0">Rp300.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  3D Model Karakter yang digunakan untuk proses pembuatan Animasi
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/0001.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  Turn your photo into Lego
+                </h5>
+                <p class="product-price mb-0">Rp30.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Ubah foto anda kedalam bentuk figur lego
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0009.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  Nusa DPS Bali Sunrise - Nusa X 3Didaw (Custom Colaboration)
+                </h5>
+                <p class="product-price mb-0">Rp200.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Parfum yang mengingatkan pada pagi hari di Bali, dengan danau yang biru dan kerinduan akan keindahan matahari terbit.
+                  Parfum Kolaborasi Khusus antara Nusa dan 3Didaw.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0010.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  Nusa DPS Sunny Gate - Nusa X 3Didaw (Custom Colaboration)
+                </h5>
+                <p class="product-price mb-0">Rp200.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Parfum yang menggambarkan suasana hangat di siang hari di Bali, dengan kesan gapura yang menawan.
+                  Parfum Kolaborasi Khusus antara Nusa dan 3Didaw.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0011.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  Nusa DPS Golden Hour - Nusa X 3Didaw (Custom Colaboration)
+                </h5>
+                <p class="product-price mb-0">Rp220.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Parfum yang mengabadikan suasana sore hari saat matahari terbenam, dengan aroma yang mengingatkan pada danau dan kerinduan akan malam di Bali.
+                  Parfum Kolaborasi Khusus antara Nusa dan 3Didaw.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0012.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  Nusa BDO Green Whisper - Nusa X 3Didaw (Custom Colaboration)
+                </h5>
+                <p class="product-price mb-0">Rp175.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Parfum yang menyuguhkan nuansa hijau alami, memberikan kesegaran dan ketenangan yang sejuk.
+                  Parfum Kolaborasi Khusus antara Nusa dan 3Didaw.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0013.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  Nusa BDO City Drift - Nusa X 3Didaw (Custom Colaboration)
+                </h5>
+                <p class="product-price mb-0">Rp190.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Parfum yang menciptakan suasana kota yang tenang, dengan aroma abu-abu yang tahan lama dan menenangkan, seperti danau yang damai.
+                  Parfum Kolaborasi Khusus antara Nusa dan 3Didaw.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0014.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  Nusa BDO Wild Ember - Nusa X 3Didaw (Custom Colaboration)
+                </h5>
+                <p class="product-price mb-0">Rp210.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Parfum yang menggambarkan suasana alam bebas, dengan aroma tajam yang sulit dilupakan dan memberikan kesan maskulin bagi pria.
+                  Parfum Kolaborasi Khusus antara Nusa dan 3Didaw.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <!-- Tambah produk lain di sini -->
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0">Products The Aborigin</h5>
+          <a href="#" class="text-primary text-decoration-none"
+            >Lihat Semua Barang</a
+          >
+        </div>
+        <div class="products-scroll-container">
+          <button class="scroll-button scroll-left hidden" id="scrollLeft2">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="scroll-button scroll-right" id="scrollRight2">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="products-container g-4" id="container2">
+            <div class="card product-card">
+              <img
+                src="../Images/baju3-removebg-preview.png"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Jon Parker</h5>
+                <p class="product-price mb-0">Rp75.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Kaos Orisinil The Aborigin ini hadir dengan desain yang unik, menampilkan Quotes 3j Jewel, Jokes, dan Jonrio. Dikenal sebagai kaos yang murah namun berkualitas, bahan yang digunakan sangat sejuk dan nyaman di kulit. Cocok untuk Anda yang ingin tampil stylish tanpa harus mengeluarkan banyak uang.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/baju4-removebg-preview.png"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Ab-Origin</h5>
+                <p class="product-price mb-0">Rp70.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Kaos Signature Orisinil Ab-Origin ini memiliki font yang terpampang jelas di bagian depan, menambah kesan modern dan berkelas. Dengan kualitas bahan yang premium, kaos ini sangat nyaman dipakai dalam berbagai kesempatan, menjadikannya pilihan tepat untuk gaya sehari-hari.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/baju5.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">EinsTain?</h5>
+                <p class="product-price mb-0">Rp80.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Kaos ini menampilkan karikatur wajah Albert Einstein yang ikonik, memberikan sentuhan kreatif dan unik pada penampilan Anda. Terbuat dari bahan berkualitas tinggi, kaos ini tidak hanya menarik perhatian tetapi juga memberikan kenyamanan maksimal saat dikenakan.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/baju6.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Fiery Lily</h5>
+                <p class="product-price mb-0">Rp75.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Dengan motif bunga Lily yang cantik, kaos ini menawarkan kombinasi sempurna antara keindahan dan kenyamanan. Desainnya yang feminin dan elegan membuatnya ideal untuk berbagai acara, dari santai hingga semi-formal.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img src="../Images/basketball back.png" class="card-img-top product-image" alt="" />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  BasBorigin
+                </h5>
+                <p class="product-price mb-0">Rp76.000</p>
+                <p class="product-original-price mb-1">Rp80.000 <span class="product-discount">-5%</span></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <p id="hidden-description" class="d-none">
+                    Kaos dengan gambar basket ini sangat cocok untuk Anda yang aktif dan menyukai olahraga. Terbuat dari bahan yang ringan dan breathable, kaos ini akan membuat Anda tetap nyaman saat beraktivitas. Saat ini, kaos ini sedang diskon 5%, dari harga awal Rp80.000 menjadi Rp76.000, menjadikannya pilihan yang sangat menarik.
+                  </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/crunchjoy.png"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  CrunchJoy Special T-Shirt
+                </h5>
+                <p class="product-price mb-0">Rp76.500</p>
+                <p class="product-original-price mb-1">Rp85.000 <span class="product-discount">-10%</span></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <p id="hidden-description" class="d-none">
+                    Sebagai hasil kolaborasi spesial antara CrunchJoy (sebuah usaha snack) dan fashion, kaos ini menampilkan logo CrunchJoy yang mencolok di depannya. Dengan diskon 10% dari harga awal Rp85.000 menjadi Rp76.500, kaos ini adalah pilihan yang sempurna untuk Anda yang ingin tampil trendy sambil menikmati camilan favorit.
+                  </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/DARK BROWN BACK.png"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  Brown-ez T-Shirt
+                </h5>
+                <p class="product-price mb-0">Rp72.000</p>
+                <p class="product-original-price mb-1">Rp75.000 <span class="product-discount">-4%</span></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <p id="hidden-description" class="d-none">
+                    Kaos coklat ini terinspirasi dari brownis, menawarkan kenyamanan dan kelembutan yang luar biasa.
+                    Kaos ini adalah investasi yang bagus untuk koleksi pakaian Anda yang nyaman dan stylish.
+                  </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/WHITE HOODIE BACK.png"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  MnM Hoodie
+                </h5>
+                <p class="product-price mb-0">Rp120.000</p>
+                <p class="product-original-price mb-1">
+                  Rp150.000 <span class="product-discount">-20%</span>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <p id="hidden-description" class="d-none">
+                    Hoodie Signature Ab-Origin ini terinspirasi oleh gaya rapper terkenal dunia, Eminem. Dengan diskon 20% dari harga awal Rp150.000 menjadi Rp120.000, hoodie ini tidak hanya memberikan kehangatan, tetapi juga gaya yang edgy dan fashionable.
+                  </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/name 2.png"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  PhyLar Exclusive T-Shirt
+                </h5>
+                <p class="product-price mb-0">Rp120.000</p>
+                <p class="product-original-price mb-1">
+                  Rp150.000 <span class="product-discount">-20%</span>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <p id="hidden-description" class="d-none">
+                    Ini adalah kaos origin dan eksklusif pertama dari The Aborigin, hasil kerjasama dengan Sportal Corporate dari India. Dikenalkan dalam acara Pengabdian Masyarakat International Fakultas Kedokteran Universitas Sumatera Utara dengan Sportal Corporate Pvt, Ltd "Peningkatan Kapasitas Guru Olahraga dalam Mengintegrasikan Literasi Jasmani dalam Pendidikan Jasmani Olahraga dan Kesehatan.
+                    kaos ini adalah simbol kolaborasi yang sukses. Dengan diskon 20% dari harga awal Rp150.000 menjadi Rp120.000, kaos ini adalah pilihan yang tidak boleh Anda lewatkan untuk menunjukkan dukungan terhadap kolaborasi kreatif dalam dunia fashion dan olahraga.
+                  </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <!-- Tambah produk lain di sini -->
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0">Binary Bites</h5>
+          <a href="#" class="text-primary text-decoration-none"
+            >Lihat Semua Barang</a
+          >
+        </div>
+        <div class="products-scroll-container">
+          <button class="scroll-button scroll-left hidden" id="scrollLeft3">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="scroll-button scroll-right" id="scrollRight3">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="products-container g-4" id="container3">
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0018.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Brownies</h5>
+                <p class="product-price mb-0">Rp15.000 - Rp 18.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Brownies klasik yang lembut dan kaya rasa cokelat. Dikenal karena teksturnya yang fudgy dan rasa manis yang seimbang, brownies ini adalah pilihan sempurna untuk pencinta cokelat. Tersedia dalam dua varian harga, Rp15.000 - Rp18.000, sesuai dengan ukuran atau topping yang dipilih. Cocok untuk dinikmati sendiri atau dibagikan kepada teman dan keluarga.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0019.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Brownies</h5>
+                <p class="product-price mb-0">Rp15.000 - Rp 18.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Brownies klasik yang lembut dan kaya rasa cokelat. Dikenal karena teksturnya yang fudgy dan rasa manis yang seimbang, brownies ini adalah pilihan sempurna untuk pencinta cokelat. Tersedia dalam dua varian harga, Rp15.000 - Rp18.000, sesuai dengan ukuran atau topping yang dipilih. Cocok untuk dinikmati sendiri atau dibagikan kepada teman dan keluarga.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0020.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Melted Brownies</h5>
+                <p class="product-price mb-0">Rp18.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Brownies yang meleleh di mulut! Dengan lapisan cokelat yang melimpah dan tekstur yang sangat lembut, melted brownies ini memberikan pengalaman rasa yang tak terlupakan. Hanya dengan harga Rp18.000, Anda bisa menikmati kelezatan brownies yang kaya ini. Sangat ideal untuk pencinta cokelat yang ingin merasakan sensasi cokelat meleleh.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0021.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Melted Brownies</h5>
+                <p class="product-price mb-0">Rp18.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Brownies yang meleleh di mulut! Dengan lapisan cokelat yang melimpah dan tekstur yang sangat lembut, melted brownies ini memberikan pengalaman rasa yang tak terlupakan. Hanya dengan harga Rp18.000, Anda bisa menikmati kelezatan brownies yang kaya ini. Sangat ideal untuk pencinta cokelat yang ingin merasakan sensasi cokelat meleleh.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0022.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Crispy Brownies</h5>
+                <p class="product-price mb-0">Rp15.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Brownies renyah yang menawarkan kombinasi sempurna antara tekstur crispy di luar dan kelembutan di dalam. Dengan harga Rp15.000, crispy brownies ini adalah pilihan yang tepat untuk Anda yang menyukai variasi dalam setiap gigitan. Nikmati kelezatan ini sebagai camilan atau hidangan penutup yang menggugah selera.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0023.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Crispy Brownies</h5>
+                <p class="product-price mb-0">Rp15.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Brownies renyah yang menawarkan kombinasi sempurna antara tekstur crispy di luar dan kelembutan di dalam. Dengan harga Rp15.000, crispy brownies ini adalah pilihan yang tepat untuk Anda yang menyukai variasi dalam setiap gigitan. Nikmati kelezatan ini sebagai camilan atau hidangan penutup yang menggugah selera.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0024.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Crispy Brownies</h5>
+                <p class="product-price mb-0">Rp15.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Brownies renyah yang menawarkan kombinasi sempurna antara tekstur crispy di luar dan kelembutan di dalam. Dengan harga Rp15.000, crispy brownies ini adalah pilihan yang tepat untuk Anda yang menyukai variasi dalam setiap gigitan. Nikmati kelezatan ini sebagai camilan atau hidangan penutup yang menggugah selera.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0025.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Cookies Brownies</h5>
+                <p class="product-price mb-0">Rp15.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                <p id="hidden-description" class="d-none">
+                  Kombinasi sempurna antara brownies dan cookies! Cookies brownies ini menawarkan rasa manis yang kaya dengan tekstur yang chewy. Dengan harga terjangkau Rp15.000, produk ini adalah pilihan ideal untuk Anda yang ingin merasakan dua kelezatan dalam satu gigitan. Sempurna untuk menemani waktu santai Anda.
+                </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <!-- Tambah produk lain di sini -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer  class="Footer">
+      <div>
+        <div>
+          <div>
+            <h2>FOLLOW US</h2>
+              <div>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-linkedin"></i>
+              </div>
+              <p>✉️ Iclick@gmail.com</p>
+          </div>
+        <div class="row">
+          <div class="col text-center">
+            <p style="margin-top: 15px;">&copy; 2024 I-Click. All rights reserved. | Temukan berbagai produk berkualitas dengan harga terbaik.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="../Script/script.js"></script>
+    <script src="../Script/nav.js"></script>
+    <script src="../Script/img.js"></script>
+    <script src="../Script/product-detail.js"></script>
+    <script src="../Script/handler.js"></script>
+    <script src="../Script/Shopping-cart.js"></script>
+    <script src="../Script/cart-page.js"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
